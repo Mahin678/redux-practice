@@ -1,16 +1,12 @@
-import * as Type from '../Action/Type';
+import * as Types from "../Action/Type";
 const int = [];
 const createTodo = (state = int, action) => {
-	switch (action.types) {
-		case Type.CREATE_TODO:
-			console.log(action.payload);
-			return [
-				...state,
-				{ id: action.payload, text: action.text, completed: false },
-			];
-		default:
-			return state;
-	}
+  switch (action.type) {
+    case Types.CREATE_TODO:
+      return [...state, { id: action.id, text: action.text, completed: false }];
+    default:
+      return state;
+  }
 };
 export default createTodo;
 
